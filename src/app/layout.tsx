@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FloatingEmergencyButton from '../components/site/FloatingEmergencyButton'
+import { Toaster } from 'sonner'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         {children}
         <FloatingEmergencyButton></FloatingEmergencyButton>
+        <Toaster position="top-right" />
       </body>
     </html>
   );
