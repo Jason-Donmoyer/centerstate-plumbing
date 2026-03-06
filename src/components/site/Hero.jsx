@@ -8,9 +8,9 @@ export default function Hero({ heroData }) {
 
     return (
         <div className="min-h-screen bg-brand-blue flex flex-col items-center justify-center gap-4">
-            <div className="flex items-center justify-center">
-                <Image src="/logo.svg" width={120} height={60} alt="Centerstate Plumbing and Heating Logo"></Image>
-                <h1 className="text-white font-bold text-5xl">{headline}</h1>
+            <div className="flex items-center justify-center flex-col">
+                <Image src="/noBgWhite.svg" width={200} height={140} alt="Centerstate Plumbing and Heating Logo"></Image>
+                <h1 className="text-white font-bold text-5xl pl-4 mt-8">{headline}</h1>
             </div>
             <h2 className="text-white">{subHeadline}</h2>
             <div className="flex flex-col items-center justify-center gap-4">

@@ -3,7 +3,7 @@ import * as Icons from 'lucide-react'
 export default function Services({ servicesData }) {
     
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 py-8 bg-brand-silver">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 py-8 bg-brand-silver mb-2">
         {servicesData.map(service => {
             const Icon = Icons[service.icon]
             return (
@@ -25,15 +25,4 @@ export default function Services({ servicesData }) {
         )}
         </div>
     )
-
-
-    // return (
-    //     <div
-    //         {servicesData.map(service => {
-    //             <h1>{service.name}</h1>
-    //         })}
-    //     >
-
-    //     </div>
-    // )
 }

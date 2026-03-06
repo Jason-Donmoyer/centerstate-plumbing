@@ -1,21 +1,11 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server.js'
 import Hero from '@/components/site/Hero'
 import Services from '@/components/site/Services'
+import Testimonials from '@/components/site/Testimonials'
+import Pricing from '@/components/site/Pricing'
 
 export default async function HomePage() {
     const supabase = await createServerSupabaseClient()
-
-    // const { data, error} = await supabase
-    //     .from('content_blocks')
-    //     .select('*')
-    //     .eq('id', 'hero')
-    
-    //     if (error) {
-    //         console.error("There was an error fetching data:", error)
-    //         return (
-    //             <p>There was an error loading this page.</p>
-    //         )
-    //     }
 
     const [
         { data: heroData, error: heroError },
@@ -40,8 +30,8 @@ export default async function HomePage() {
         <div>
             <Hero heroData={heroData[0]}></Hero>
             <Services servicesData={servicesData}></Services>
-            {/* <Testimonials testimonialData={testimonialData}></Testimonials> */}
-            {/* <Pricing pricingData={pricingData}></Pricing> */}
+            <Testimonials testimonialsData={testimonialsData}></Testimonials>
+            <Pricing pricingData={pricingData}></Pricing>
             {/* <About aboutData={aboutData[0]}></About> */}
         </div>
     )
