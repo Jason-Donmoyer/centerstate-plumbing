@@ -6,6 +6,7 @@ import Pricing from '@/components/site/Pricing'
 import About from '@/components/site/About'
 import LeadForm from '@/components/site/LeadForm'
 import ServiceArea from '@/components/site/ServiceArea'
+import Footer from '@/components/site/Footer'
 
 export default async function HomePage() {
     const supabase = await createServerSupabaseClient()
@@ -38,6 +39,7 @@ export default async function HomePage() {
             <About aboutData={aboutData[0]}></About>
             <LeadForm></LeadForm>
             <ServiceArea></ServiceArea>
+            <Footer></Footer>
         </div>
     )
 }
