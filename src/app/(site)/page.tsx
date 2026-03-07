@@ -5,6 +5,7 @@ import Testimonials from '@/components/site/Testimonials'
 import Pricing from '@/components/site/Pricing'
 import About from '@/components/site/About'
 import LeadForm from '@/components/site/LeadForm'
+import ServiceArea from '@/components/site/ServiceArea'
 
 export default async function HomePage() {
     const supabase = await createServerSupabaseClient()
@@ -36,6 +37,7 @@ export default async function HomePage() {
             <Pricing pricingData={pricingData}></Pricing>
             <About aboutData={aboutData[0]}></About>
             <LeadForm></LeadForm>
+            <ServiceArea></ServiceArea>
         </div>
     )
 }
