@@ -12,36 +12,38 @@ export default async function ShowLeads() {
             console.error('There was an error fetching leads:', error)
             return ( <p>{error.message}</p> )
         }
+    
 
     return (
-        <div>
-            <h1>Leads</h1>
-            <div>
-                {data.map(lead => (
-                    <div 
-                        key={lead.id}
-                        className="flex flex-col items-center justify-center py-12 px-8 gap-2 bg-brand-silver"
-                    >
-                        <h2 className="font-bold text-2xl">{lead.name}</h2>
-                        <h3 className="font-semibold">{lead.phone}</h3>
-                        <p>{lead.email}</p>
-                        <p>{lead.urgency}</p>
-                        <div className="flex text-center py-12 px-8 gap-8 w-full">
-                            <h4>{lead.service_type}</h4>
-                            <p>{lead.message}</p>
-                        </div>
-                        <div>
-                            {lead.read 
-                            ? <p className="text-white bg-brand-light-blue font-bold rounded p-5">Viewed</p> 
-                            :
-                            <p className="text-white bg-brand-orange font-bold rounded p-5">New Lead</p>
-                            }
-                        </div>
-                        <MarkAsRead leadId={lead.id} isRead={lead.read}></MarkAsRead>
-                    </div>
-
-                ))}
+        <div className="min-h-screen bg-gray-50 py-12 px-8">
+            <h1 className="font-bold text-4xl text-brand-blue text-center mb-8">Leads</h1>
+            <div className="flex flex-col items-center gap-6">
+                {data.map(lead => {
+                    const cardBase = "flex flex-col items-center justify-center py-12 px-8 gap-2 rounded-2xl m-6 w-2/3"
+                    return (
+                            <div 
+                            key={lead.id}
+                            className={`${cardBase} ${lead.urgency === 'emergency' ? 'bg-red-50 border-l-sky-400 border-brand-orange' : 'bg-white border-gray-200'}`}
+                            >
+                                <div className="flex items-center justify-between w-3/4">
+                                    <h2 className="font-bold text-xl text-brand-blue">{lead.name}</h2>
+                                    {lead.read 
+                                    ? <p className="text-white bg-brand-light-blue font-bold rounded-full px-4 py-1 text-sm">Viewed</p> 
+                                    :
+                                    <p className="text-white bg-brand-orange font-bold rounded-full px-4 py-1 text-sm">New Lead</p>
+                                    }
+                                </div>
+                                
+                                <p className="font-semibold text-brand-gray">{lead.phone}</p>
+                                <p className="text-sm text-brand-gray">{lead.email}</p>
+                                <p className="text-sm font-semibold uppercase">{lead.service_type} - {lead.urgency}</p>
+                                <p className="text-sm text-brand-gray">{lead.message}</p>
+                                <p>{lead.urgency}</p>
+                                <MarkAsRead leadId={lead.id} isRead={lead.read}></MarkAsRead>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-        </div>
-    )
+        )
 }

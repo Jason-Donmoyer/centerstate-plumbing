@@ -24,9 +24,9 @@ export default function MarkAsRead({ leadId, isRead }) {
 
     return (
         <div>
-            {!viewed ? <button onClick={markAsRead}>Mark As Read</button>
+            {!viewed ? <button onClick={markAsRead} className="rounded-2xl bg-brand-blue text-white p-4 cursor-pointer hover:bg-brand-light-blue">Mark As Read</button>
             :
-            <p>Viewed</p>
+            <p className="rounded-2xl bg-brand-silver text-black font-semibold p-4">Viewed</p>
             }
         </div>
     )
