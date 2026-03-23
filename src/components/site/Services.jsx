@@ -2,10 +2,12 @@ import * as Icons from 'lucide-react'
 
 export default function Services({ servicesData }) {
     
+    
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 py-8 bg-brand-silver mb-2">
         {servicesData.map(service => {
-            const Icon = Icons[service.icon]
+            const iconName = service.icon.charAt(0).toUpperCase() + service.icon.slice(1)
+            const Icon = Icons[iconName]
             return (
                 <div 
                     key={service.id}
@@ -16,7 +18,7 @@ export default function Services({ servicesData }) {
                     <div className="flex items-center justify-center">
                         {service.is_emergency
                         ? <p className="text-white bg-brand-orange font-bold rounded p-5">Emergency Service</p>
-                        : <Icon size={30}></Icon>
+                        : Icon ? <Icon size={30} /> : <span>🔧</span>
                         }  
                     </div>
                 </div>
