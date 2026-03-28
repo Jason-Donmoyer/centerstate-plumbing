@@ -81,7 +81,7 @@ export default function ServicesManager({ data }) {
 
     async function updateService(formData) {
         const supabase = createClient()
-        console.log(formData)
+        // console.log(formData)
         const { error } = await supabase
             .from('services')
             .update({
