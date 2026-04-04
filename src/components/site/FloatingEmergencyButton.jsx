@@ -3,35 +3,58 @@
 import { BUSINESS } from '../../lib/constants'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { createClient } from '@/lib/supabase'
 
 
 export default function FloatingEmergencyButton() {
     const telLink = BUSINESS.phone
+    const [isVisible, setIsVisible] = useState(true)
     const pathname = usePathname()
+    const supabase = createClient()
 
     if (pathname.includes('admin')) return null
 
+    useEffect(() => {
+        async function getButtonData() {
+            const { data, error } = await supabase
+                .from('settings')
+                .select('*')
+                .eq('name', 'floating_emergency_button')
+                .single()
+            if (error) {
+                console.error("There was a problem fetching data:", error)
+                // return <p>There was a problem fetching data. Please try again</p>
+            }
+            setIsVisible(data.visible)
+        }
+        getButtonData()
+    }, [])
+
     return (
-        <a
-            href={`tel:${telLink}`}
-            className="
-                bg-brand-orange 
-                fixed 
-                bottom-6 
-                right-6 
-                hidden 
-                md:flex
-                rounded-full
-                shadow
-                p-6
-                text-white
-                font-bold
-                items-center
-                gap-2
-                "
-        >
-        <span>&#128680;</span>
-        <span>Emergency Repair</span>
-        </a>
+        <>
+            {isVisible && (
+                <a
+                href={`tel:${telLink}`}
+                className="
+                    bg-brand-orange 
+                    fixed 
+                    bottom-6 
+                    right-6 
+                    hidden 
+                    md:flex
+                    rounded-full
+                    shadow
+                    p-6
+                    text-white
+                    font-bold
+                    items-center
+                    gap-2
+                    "
+            >
+            <span>&#128680;</span>
+            <span>Emergency Repair</span>
+            </a>
+            )}
+        </>
     )
 }
