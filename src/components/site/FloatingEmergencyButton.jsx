@@ -1,9 +1,15 @@
-import { BUSINESS } from '../../lib/constants'
+'use client'
 
+import { BUSINESS } from '../../lib/constants'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 
 export default function FloatingEmergencyButton() {
     const telLink = BUSINESS.phone
+    const pathname = usePathname()
+
+    if (pathname.includes('admin')) return null
 
     return (
         <a
