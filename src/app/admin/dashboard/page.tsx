@@ -1,4 +1,5 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
+import FloatingEmergencyToggle from '@/components/admin/FloatingEmergencyToggle'
 import Link from 'next/link'
 
 export default async function Dashboard() {
@@ -30,6 +31,7 @@ export default async function Dashboard() {
             >
                 Go To Leads
             </Link>
+            <FloatingEmergencyToggle></FloatingEmergencyToggle>
         </div>
     ) 
 }
