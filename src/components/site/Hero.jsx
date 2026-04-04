@@ -1,10 +1,16 @@
+'use client'
+
 import Image from 'next/image'
+import { BUSINESS } from '../../lib/constants'
+import useFloatingVisibility from '@/hooks/useFloatingVisibility'
 
 export default function Hero({ heroData }) {
     const headline = heroData.data.headline
     const subHeadline = heroData.data.subheadline
     const ctaQuote = heroData.data.cta_quote
     const ctaEmergency = heroData.data.cta_emergency
+    const telLink = BUSINESS.phone
+    const isVisible = useFloatingVisibility()
 
     return (
         <div className="min-h-screen bg-brand-blue flex flex-col items-center justify-center gap-4">
@@ -14,8 +20,15 @@ export default function Hero({ heroData }) {
             </div>
             <h2 className="text-white">{subHeadline}</h2>
             <div className="flex flex-col items-center justify-center gap-4">
-                <button className="px-6 py-3 bg-brand-orange text-white rounded cursor-pointer">{ctaEmergency}</button>
-                <button className="px-6 py-3 bg-brand-silver text-brand-blue rounded cursor-pointer">{ctaQuote}</button>
+                {isVisible && (
+                    <a href={`tel:${telLink}`} className="px-6 py-3 bg-brand-orange text-white rounded cursor-pointer">{ctaEmergency}</a>
+                )}
+                <button 
+                    onClick={() => document.getElementById('contact').scrollIntoView()} 
+                    className="px-6 py-3 bg-brand-silver text-brand-blue rounded cursor-pointer"
+                >
+                    {ctaQuote}
+                </button>
             </div>
         </div>
     )

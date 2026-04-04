@@ -45,7 +45,7 @@ export default function LeadForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-8 gap-2">
+        <form id="contact" onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-8 gap-2">
             <div className="flex flex-col gap-1">
                 <label className="text-sm font-semibold text-brand-gray">Name</label>
                 <input 
