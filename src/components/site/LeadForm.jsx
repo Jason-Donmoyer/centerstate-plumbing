@@ -115,12 +115,16 @@ export default function LeadForm() {
                               focus:ring-brand-blue"
                 >
                     <option value="">Select a service</option>
+                    <option value="new construction">New Construction</option>
+                    <option value="renovation">Renovation</option>
+                    <option value="commercial">Commercial</option>
                     <option value="emergency_repairs">Emergency Repairs</option>
-                    <option value="drain_cleaning">Drain Cleaning</option>
+                    <option value="minor-drain_cleaning">Minor Drain Cleaning</option>
                     <option value="water_heater">Water Heater Installation</option>
                     <option value="pipe_repair">Pipe Repair & Replacement</option>
-                    <option value="heating">Heating Systems</option>
+                    <option value="heating">Hydronic Heating Systems</option>
                     <option value="fixture">Fixture Installation</option>
+                    <option value="other">Other Service</option>
                 </select>
                 {errors.service_type && <p className="text-red-500 text-sm">{errors.service_type.message}</p>}
             </div>

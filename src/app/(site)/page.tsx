@@ -20,7 +20,7 @@ export default async function HomePage() {
     ] = await Promise.all([
         supabase.from('content_blocks').select('*').eq('id', 'hero'),
         supabase.from('services').select('*').order('order_index'),
-        supabase.from('testimonials').select('*').order('order_index'),
+        supabase.from('testimonials').select('*').eq('visible', true).order('order_index'),
         supabase.from('pricing_cards').select('*').order('order_index'),
         supabase.from('content_blocks').select('*').eq('id', 'about'),
     ])
