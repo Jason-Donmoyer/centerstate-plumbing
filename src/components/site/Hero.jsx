@@ -18,14 +18,14 @@ export default function Hero({ heroData }) {
                 <Image src="/noBgWhite.svg" width={350} height={350} alt="Centerstate Plumbing and Heating Logo"></Image>
                 <h1 className="text-white text-center font-bold text-5xl pl-4 mt-8">{headline}</h1>
             </div>
-            <h2 className="text-white">{subHeadline}</h2>
+            <h2 className="text-white text-center mx-6 my-4">{subHeadline}</h2>
             <div className="flex flex-col items-center justify-center gap-4">
                 {isVisible && (
                     <a href={`tel:${telLink}`} className="px-6 py-3 bg-brand-orange text-white rounded cursor-pointer">{ctaEmergency}</a>
                 )}
                 <button 
                     onClick={() => document.getElementById('contact').scrollIntoView()} 
-                    className="px-6 py-3 bg-brand-silver text-brand-blue rounded cursor-pointer"
+                    className="px-6 py-3 bg-brand-silver text-brand-blue rounded cursor-pointer mb-4"
                 >
                     {ctaQuote}
                 </button>

@@ -57,7 +57,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2 
+                              md:w-1/2 
                               focus:outline-none 
                               focus:ring-2 
                               focus:ring-brand-blue"
@@ -75,7 +75,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2 
+                              md:w-1/2 
                               focus:outline-none 
                               focus:ring-2 
                               focus:ring-brand-blue"
@@ -93,7 +93,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2 
+                              md:w-1/2 
                               focus:outline-none 
                               focus:ring-2 
                               focus:ring-brand-blue"
@@ -109,7 +109,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2 
+                              md:w-1/2 
                               focus:outline-none 
                               focus:ring-2 
                               focus:ring-brand-blue"
@@ -137,7 +137,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2 
+                              md:w-1/2 
                               focus:outline-none 
                               focus:ring-2 
                               focus:ring-brand-blue"    
@@ -158,7 +158,7 @@ export default function LeadForm() {
                               rounded 
                               px-3 
                               py-2
-                              w-1/2
+                              md:w-1/2
                               h-36 
                               focus:outline-none 
                               focus:ring-2 
@@ -176,7 +176,7 @@ export default function LeadForm() {
                 p-6
                 text-white
                 font-bold
-                w-1/5
+                md:w-1/5
                 mt-3.5
                 cursor-pointer
                 "
