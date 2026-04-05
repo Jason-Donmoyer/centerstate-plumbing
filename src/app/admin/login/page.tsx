@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase'
+import { toast } from 'sonner'
 
 export default function LoginPage() {
     const router = useRouter()
@@ -28,8 +29,21 @@ export default function LoginPage() {
         router.push('/admin/dashboard')
     }
 
+    async function resetPassword() {
+        const supabase = createClient()
+        if (email) {
+            await supabase.auth.resetPasswordForEmail(email, {
+                redirectTo: 'https://www.centerstateplumbingnj.com/admin/reset-password'
+            })
+            toast.success("An email has been sent to reset your password.")
+        } else {
+            toast.error("Please enter a valid email")
+        }
+        
+    }
+
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
             <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow w-full max-w-sm space-y-4">
                 <h1 className="text-xl font-bold">Centerstate Admin</h1>
                 {error && <p className="text-red-600 text-sm">{error}</p>}
@@ -57,6 +71,12 @@ export default function LoginPage() {
                     {loading ? 'Logging in...' : 'Log In'}
                 </button>
             </form>
+            <button
+                className="mt-8 font-semibold hover:text-brand-orange cursor-pointer"
+                onClick={resetPassword}
+            >
+                Forgot Password?
+            </button>
         </div>
     )
 }
