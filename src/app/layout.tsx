@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const title = "Plumbing Contractor | Union Beach, NJ"
-const description = "Plumbing Contractor, residential new and renovations, commercial ground up and fit out, RO - DI and chemical waste systems, sump pumps, water heaters"
+const description = "Plumber Contractor, residential new and renovations, commercial ground up and fit out, RO - DI and chemical waste systems, sump pumps, water heaters"
 const images = "/og-image.jpg"
 
 export const metadata: Metadata = {
