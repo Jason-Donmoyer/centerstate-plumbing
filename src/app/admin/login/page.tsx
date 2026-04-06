@@ -33,7 +33,7 @@ export default function LoginPage() {
         const supabase = createClient()
         if (email) {
             await supabase.auth.resetPasswordForEmail(email, {
-                redirectTo: 'https://www.centerstateplumbingnj.com/admin/reset-password'
+                redirectTo: 'https://centerstateplumbingnj.com/admin/reset-password'
             })
             toast.success("An email has been sent to reset your password.")
         } else {
