@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, NextRequest } from 'next/server'
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
     if (request.nextUrl.pathname === '/admin/login') {
         return NextResponse.next()
     }
@@ -25,6 +25,10 @@ export async function proxy(request: NextRequest) {
     )
 
     const { data: { session } } = await supabase.auth.getSession()
+
+    if (request.nextUrl.pathname === '/admin/reset-password') {
+        return NextResponse.next()
+    }
 
     if (!session) {
         return NextResponse.redirect(new URL('/admin/login', request.url))
