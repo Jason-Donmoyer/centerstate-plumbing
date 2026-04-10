@@ -21,7 +21,7 @@ export default function Hero({ heroData }) {
             <h2 className="text-white text-center mx-6 my-4">{subHeadline}</h2>
             <div className="flex flex-col items-center justify-center gap-4">
                 {isVisible && (
-                    <a href={`tel:${telLink}`} className="px-6 py-3 bg-brand-orange text-brand-blue font-extrabold rounded cursor-pointer">{ctaEmergency}</a>
+                    <a href={`tel:${telLink}`} className="px-6 py-3 bg-brand-orange text-brand-white font-extrabold rounded cursor-pointer">{ctaEmergency}</a>
                 )}
                 <button 
                     onClick={() => document.getElementById('contact').scrollIntoView()} 
