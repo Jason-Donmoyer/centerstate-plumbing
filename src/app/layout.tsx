@@ -18,6 +18,21 @@ const title = "Plumber Contractor | Union Beach, NJ"
 const description = "Plumber Contractor, residential new and renovations, commercial ground up and fit out, RO - DI and chemical waste systems, sump pumps, water heaters"
 const images = "/og-image.jpg"
 
+const ldJsonObject = {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Centerstate Plumbing and Heating LLC",
+  "telephone": "7323339508",
+  "address": {
+    "@type": "PostalAddress",
+    // "streetAddress": "115 Ash Street",
+    "addressLocality": "Union Beach",
+    "addressRegion": "New Jersey",
+    "postalCode": "07735"
+  },
+  "url": "https://centerstateplumbingnj.com"
+}
+
 export const metadata: Metadata = {
   robots: {
     index: true,
@@ -46,6 +61,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJsonObject) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
