@@ -101,8 +101,9 @@ export default function LeadForm() {
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
             <div className=" flex flex-col gap-1">
-                <label className="text-sm font-semibold text-brand-gray">Service-Type</label>
-                <select 
+                <label htmlFor='service_type' className="text-sm font-semibold text-brand-gray">Service-Type</label>
+                <select
+                    id="service_type" 
                     {...register('service_type')}
                     className="border 
                              border-gray-300 
@@ -129,8 +130,9 @@ export default function LeadForm() {
                 {errors.service_type && <p className="text-red-500 text-sm">{errors.service_type.message}</p>}
             </div>
             <div className="flex flex-col gap-1">
-                <label className="text-sm font-semibold text-brand-gray">Urgency</label>
+                <label htmlFor='urgency' className="text-sm font-semibold text-brand-gray">Urgency</label>
                 <select 
+                    id="urgency"
                     {...register('urgency')}
                     className="border 
                              border-gray-300 

@@ -31,7 +31,7 @@ export default async function HomePage() {
     if (aboutError) return <p>Failed to load page.</p>
 
     return (
-        <div className="overflow-x-hidden">
+        <main className="overflow-x-hidden">
             <Hero heroData={heroData[0]}></Hero>
             <Services servicesData={servicesData}></Services>
             <Testimonials testimonialsData={testimonialsData}></Testimonials>
@@ -40,6 +40,6 @@ export default async function HomePage() {
             <LeadForm></LeadForm>
             <ServiceArea></ServiceArea>
             <Footer></Footer>
-        </div>
+        </main>
     )
 }

@@ -25,7 +25,7 @@ export default function Hero({ heroData }) {
                 )}
                 <button 
                     onClick={() => document.getElementById('contact').scrollIntoView()} 
-                    className="px-6 py-3 bg-brand-silver text-brand-blue rounded cursor-pointer mb-4"
+                    className="font-bold px-6 py-3 bg-brand-silver text-brand-gray rounded cursor-pointer mb-4 hover:bg-brand-light-blue"
                 >
                     {ctaQuote}
                 </button>
