@@ -139,7 +139,7 @@ export default function ServicesManager({ data }) {
             {editService !== null && (
                 <div className="fixed inset-0 bg-black/50 z-40">
                     <div className="fixed inset-0 flex flex-col items-center justify-center z-50">
-                        <div className="bg-white rounded-2xl p-8 w-1/2">
+                        <div className="bg-white rounded-2xl p-8 w-full md:w-1/2">
                             {/* Form */}
                             <form onSubmit={handleSubmit(updateService)} 
                                 className="flex flex-col p-8 gap-2">
@@ -234,7 +234,7 @@ export default function ServicesManager({ data }) {
             {createNewService && (
                 <div className="fixed inset-0 bg-black/50 z-40">
                     <div className="fixed inset-0 flex flex-col items-center justify-center z-50">
-                        <div className="bg-white rounded-2xl p-8 w-1/2">
+                        <div className="bg-white rounded-2xl p-8 w-full md:w-1/2">
                             {/* Form */}
                             <form onSubmit={handleSubmit(createService)}
                                 className="flex flex-col p-8 gap-2"

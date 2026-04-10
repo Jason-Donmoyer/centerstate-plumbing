@@ -100,7 +100,7 @@ export default function ContentManager({ about, hero }) {
                 <div className="w-full flex flex-col items-center gap-6">
                     <h2 className="font-bold text-brand-blue text-lg">Hero</h2>
                     {/* Hero Form */}
-                    <form onSubmit={handleHero(updateHero)} className="flex flex-col p-8 gap-2 w-full">
+                    <form onSubmit={handleHero(updateHero)} className="flex flex-col px-4 py-6 gap-2 w-full">
                         <label className="text-sm font-semibold text-brand-gray">Headline</label>
                             <input 
                                 type="text" 
@@ -174,10 +174,10 @@ export default function ContentManager({ about, hero }) {
                 <div className="w-full flex flex-col items-center gap-6">
                     <h2 className="font-bold text-brand-blue text-lg">About</h2>
                     {/* About Form */}
-                    <form onSubmit={handleAbout(updateAbout)} className="flex flex-col p-8 gap-2 w-full">
+                    <form onSubmit={handleAbout(updateAbout)} className="flex flex-col px-4 py-6 gap-2 w-full">
                         <label className="text-sm font-semibold text-brand-gray">Body</label>
-                        <input 
-                            type="text" 
+                        <textarea
+                            rows="6"
                             placeholder='body' 
                             {...registerAbout('body')} 
                             className="border 
@@ -189,7 +189,8 @@ export default function ContentManager({ about, hero }) {
                                         focus:outline-none 
                                         focus:ring-2 
                                         focus:ring-brand-blue"
-                        />
+                            > 
+                            </textarea>
                         <label className="text-sm font-semibold text-brand-gray">Years In Business</label>
                         <input 
                             type="text" 

@@ -19,13 +19,13 @@ export default async function ShowLeads() {
             <h1 className="font-bold text-4xl text-brand-blue text-center mb-8">Leads</h1>
             <div className="flex flex-col items-center gap-6">
                 {data.map(lead => {
-                    const cardBase = "flex flex-col items-center justify-center py-12 px-8 gap-2 rounded-2xl m-6 w-2/3"
+                    const cardBase = "flex flex-col items-center justify-center py-12 px-8 gap-2 rounded-2xl m-6 w-full md:w-2/3"
                     return (
                             <div 
                             key={lead.id}
                             className={`${cardBase} ${lead.urgency === 'emergency' ? 'bg-red-50 border-l-sky-400 border-brand-orange' : 'bg-white border-gray-200'}`}
                             >
-                                <div className="flex items-center justify-between w-3/4">
+                                <div className="flex items-center justify-between w-full md:w-3/4">
                                     <h2 className="font-bold text-xl text-brand-blue">{lead.name}</h2>
                                     {lead.read 
                                     ? <p className="text-white bg-brand-light-blue font-bold rounded-full px-4 py-1 text-sm">Viewed</p> 
