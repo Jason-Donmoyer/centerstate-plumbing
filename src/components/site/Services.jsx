@@ -17,7 +17,7 @@ export default function Services({ servicesData }) {
                     <h2 className="mb-3">{service.description}</h2>
                     <div className="flex items-center justify-center">
                         {service.is_emergency
-                        ? <p className="text-white bg-brand-orange font-bold rounded p-5">Emergency Service</p>
+                        ? <p className="text-brand-blue bg-brand-orange font-extrabold rounded p-5">Emergency Service</p>
                         : Icon ? <Icon size={30} /> : <span>🔧</span>
                         }  
                     </div>
