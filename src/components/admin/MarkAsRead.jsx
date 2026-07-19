@@ -24,9 +24,34 @@ export default function MarkAsRead({ leadId, isRead }) {
 
     return (
         <div>
-            {!viewed ? <button onClick={markAsRead} className="rounded-2xl bg-brand-blue text-white p-4 cursor-pointer hover:bg-brand-light-blue">Mark As Read</button>
-            :
-            <p className="rounded-2xl bg-brand-silver text-black font-semibold p-4">Viewed</p>
+            {!viewed 
+                ? <button 
+                    onClick={markAsRead} 
+                    className="bg-primary
+                               hover:bg-primary-light
+                               text-white
+                               font-bold
+                               text-[13px]
+                               uppercase
+                               tracking-[0.5px]
+                               px-5
+                               py-2.5
+                               rounded-lg
+                               cursor-pointer
+                               transition-colors"
+                    >
+                        Mark As Read
+                    </button>
+                : <span className="inline-block
+                                   bg-gray-100
+                                   text-gray-500
+                                   font-semibold
+                                   text-[13px]
+                                   px-5
+                                   py-2.5
+                                   rounded-lg">
+                    Viewed
+                </span>
             }
         </div>
     )
