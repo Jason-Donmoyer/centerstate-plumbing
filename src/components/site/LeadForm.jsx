@@ -48,6 +48,19 @@ export default function LeadForm() {
             return
         }
 
+        // Send email notification
+        await fetch('api/send-lead-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: formData.name,
+                phone: formData.phone,
+                email: formData.email,
+                service_type: formData.service_type,
+                message: formData.message,
+            }),
+        })
+
         toast.success('Message sent! We will be in touch shortly.')
         reset()
     }

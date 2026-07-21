@@ -8,13 +8,11 @@ export default function MarkAsRead({ leadId, isRead }) {
 
     async function markAsRead() {
         const supabase = createClient()
-        console.log(leadId)
 
         const {data, error} = await supabase
             .from('leads')
             .update({ read:true })
             .eq('id', leadId)
-        console.log(data, error)
         if (error) {
             console.error('There was a problem updating the data:', error)
             alert(error.message)

@@ -10,7 +10,7 @@ export default function FloatingEmergencyButton() {
     const pathname = usePathname()
     const isVisible = useFloatingVisibility()
 
-    console.log(pathname)
+    
     if (pathname.includes('admin')) return null
 
     return (
