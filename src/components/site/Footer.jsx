@@ -29,6 +29,7 @@ export default function Footer() {
                         <div className="font-extrabold text-[17px] tracking-tight mb-1">
                             {BUSINESS.name}
                         </div>
+                        <div className="text-[13px] text-white/45 mb-1">115 Ash Street</div>
                         <div className="text-[13px] text-white/45 mb-4">Union Beach, New Jersey</div>
                         <p className="text-[13px] text-white/50 leading-[1.7] max-w-[280px] mb-5">
                             NJ Master Plumber serving Monmouth, Middlesex and Ocean Counties with over
