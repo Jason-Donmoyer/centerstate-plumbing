@@ -11,17 +11,18 @@ const inter = Inter({
   variable: '--font-sans',
 })
 
-const title = "NJ Master Plumber | Renovations, New Construction & Commercial | Centerstate Plumbing"
-const description = "Licensed NJ Master Plumber serving Monmouth, Middlesex and Ocean Counties. Specializing in residential renovations, new construction and commercial plumbing. 25+ years experience. Call (732) 333-9508."
+const title = "Monmouth County NJ Plumber | New Construction & Renovations | Centerstate Plumbing"
+const description = "Licensed NJ Master Plumber serving Monmouth County, NJ. Specializing in new construction, renovations, residential and commercial plumbing, water heaters, gas piping and more."
 const images = "/og-image.jpg"
 
 const ldJsonObject = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  "name": "Centerstate Plumbing and Heating LLC",
+  "name": "Centerstate Plumbing and Heating",
+  "legalName": "Centerstate Plumbing and Heating LLC",
   "telephone": "+17323339508",
   "priceRange": "$$",
-  "description": "Licensed NJ Master Plumber specializing in residential renovations, new construction and commercial plumbing throughout Monmouth, Middlesex and Ocean Counties.",
+  "description": "Licensed NJ Master Plumber specializing in new construction, renovations, residential and commercial plumbing throughout Monmouth County, NJ.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Union Beach",
@@ -34,26 +35,34 @@ const ldJsonObject = {
     "latitude": 40.4476,
     "longitude": -74.1902
   },
-  "url": "https://centerstateplumbingnj.com",
+  "url": "https://www.centerstateplumbingnj.com",
   "sameAs": [
-    "https://www.google.com/maps?cid=YOUR_GOOGLE_CID"
-  ],
+  "https://www.google.com/maps/place/Centerstate+Plumbing+and+Heating/@40.2991125,-74.249818,10z/data=!3m1!4b1!4m6!3m5!1s0x430c10e37ba8b97:0x5ecffa7f523f7f57!8m2!3d40.2991125!4d-74.249818!16s%2Fg%2F11zdtfffjn"
+],
   "areaServed": [
-    { "@type": "County", "name": "Monmouth County" },
-    { "@type": "County", "name": "Middlesex County" },
-    { "@type": "County", "name": "Ocean County" }
+    {
+      "@type": "AdministrativeArea",
+      "name": "Monmouth County, NJ"
+    }
   ],
-  "hasCredentials": "NJ Master Plumber License #13826",
-  "knowsabout": [
-    "Residential Plumbing",
-    "Commercial Plumbing",
-    "Industrial Plumbing",
-    "New Construction Plumbing",
-    "Renovations",
-    "Fit-Outs",
-    "Hydronic Heating",
-    "Water Heaters"
-  ]
+  "hasCredential": {
+  "@type": "EducationalOccupationalCredential",
+  "credentialCategory": "NJ Master Plumber License",
+  "name": "NJ Master Plumber License #13826"
+},
+  "knowsAbout": [
+  "New Construction Plumbing",
+  "Plumbing Renovations",
+  "Residential Plumbing",
+  "Commercial Plumbing",
+  "Bathroom Renovation Plumbing",
+  "Kitchen Renovation Plumbing",
+  "Gas Piping",
+  "Water Heaters",
+  "Tankless Water Heaters",
+  "Boilers",
+  "Water Filtration"
+]
 }
 
 export const metadata: Metadata = {
@@ -64,6 +73,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.centerstateplumbingnj.com'),
   title,
   description,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title,
     description,

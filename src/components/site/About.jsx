@@ -19,7 +19,7 @@ const CREDENTIALS = [
     },
     {
         label: 'Licensed, Bonded & Insured',
-        sub: 'NJ Contractor',
+        sub: 'NJ Plumbing Contractor',
         icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>,
     },
     {
@@ -30,7 +30,7 @@ const CREDENTIALS = [
 ]
 
 export default function About({ aboutData }) {
-    const headline = aboutData?.data?.headline ?? '25+ years of Plumbing Experience You Can Trust'
+    const headline = aboutData?.data?.headline ?? '25+ Years of Plumbing & Construction Experience'
     const subheadline = aboutData?.data?.subheadline ?? ''
 
     return (
@@ -47,11 +47,7 @@ export default function About({ aboutData }) {
                             {headline}
                         </h2>
                         <p className="text-[15px] text-gray-700 leading-[1.8] mb-4">
-                            I'm Jason Donmoyer, owner and Master Plumber at Centerstate Plumbing & Heating.
-                            With over 25 years of experience in residential and commercial plumbing, I've had
-                            the opportunity to work on projects most plumbers never see — from custom home
-                            renovations to schools, healthcare facilities, restaurants, laboratories and
-                            ground-up construction throughout New Jersey.
+                        I’m Jason Donmoyer, owner and NJ Master Plumber at Centerstate Plumbing & Heating. With more than 25 years of residential and commercial plumbing experience, I’ve worked on projects ranging from custom home renovations and ground-up construction to schools, healthcare facilities, restaurants, laboratories, and commercial fit-outs throughout New Jersey. Today, Centerstate serves homeowners, builders, general contractors, and remodeling professionals throughout Monmouth County, NJ.
                         </p>
                         <p className="text-[15px] text-gray-700 leading-[1.8]">
                             {subheadline}

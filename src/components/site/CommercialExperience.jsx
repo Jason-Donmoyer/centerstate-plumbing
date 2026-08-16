@@ -6,7 +6,7 @@ const EXPERIENCE = [
     { label: 'Laboratories', desc: 'RO/DI and chemical waste systems' },
     { label: 'Office Fit-Outs', desc: 'Tenant improvements and build-outs' },
     { label: 'Ground-Up Construction', desc: 'New plumbing installs from the foundation up' },
-    { label: 'Tenant Improvements', desc: 'Renovations for new and existing tenants' },
+    { label: 'Commercial Renovations', desc: 'Plumbing alterations, upgrades and phased renovation work' },
     { label: 'Multi-Family Residential', desc: 'Apartments, condos and residential developments' },
 ]
 
@@ -19,12 +19,10 @@ export default function CommercialExperience() {
                         Commercial &amp; Institutional Experience
                     </p>
                     <h2 className="font-extrabold text-3xl md:text-4xl text-white tracking-tight mb-3">
-                        Commercial Plumbing Experience
+                        Experience Across Complex Projects
                     </h2>
                     <p className="text-white/60 text-[15px] leading-relaxed">
-                        Over 25 years of experience delivering plumbing systems for restaurants,
-                        healthcare facilities, schools, laboratories, office fit-outs, and
-                        ground-up construction projects throughout New Jersey.
+                    More than 25 years of plumbing experience across a wide range of commercial and institutional projects, including restaurants, healthcare facilities, schools, laboratories, office fit-outs, and ground-up construction throughout New Jersey.
                     </p>
                 </div>
 

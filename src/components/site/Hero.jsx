@@ -7,7 +7,7 @@ export default function Hero({ heroData }) {
     // const headline = heroData.data.headline
     const subHeadline = heroData?.data?.subheadline ?? ''
     const ctaQuote = heroData?.data?.cta_quote ?? 'Request Estimate'
-    const badges = ['Licensed & Insured', 'Bonded', 'Master Plumber', '25+ Years Experience']
+    const badges = ['Licensed & Insured', 'Bonded', 'Master Plumber', '25+ Years Trade Experience']
 
     return (
         <section className="relative flex flex-col overflow-hidden min-h-screen bg-[#0a1432] pt-[70px] md:pt-[90px]">
@@ -19,7 +19,7 @@ export default function Hero({ heroData }) {
                 <div className="flex items-center px-11 pt-11 pb-4">
                     <div className="max-w-[480px]">
                         <p className="font-bold text-[#c97b38] text-[11px] uppercase tracking-[3px] mb-[14px]">
-                            NJ Licensed Master Plumber
+                            NJ Licensed Master Plumber • Est. 2025
                         </p>
                         <h1 className="font-black text-white uppercase leading-[1.06] text-[clamp(28px,3vw,38px)] tracking-tight mb-0">
                             Renovations,<br />
@@ -88,7 +88,7 @@ export default function Hero({ heroData }) {
                 <div className="hidden md:block relative overflow-hidden">
                     <Image 
                         src="/hero-project.jpg"
-                        alt="Plumbing project"
+                        alt="Centerstate Plumbing and Heating plumbing installation project"
                         fill
                         className="object-cover"
                         priority

@@ -40,7 +40,7 @@ export default function WhyCenterstate() {
                         Why Centerstate
                     </p>
                     <h2 className="font-extrabold text-3xl md:text-4xl text-text tracking-tight">
-                        Built on Experience &amp; Trust
+                    Why Builders, Contractors & Homeowners Choose Centerstate
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
@@ -51,7 +51,7 @@ export default function WhyCenterstate() {
                                         items-start 
                                         gap-3.5 
                                         p-4 r
-                                        ounded-xl 
+                                        rounded-xl 
                                         tranistion-all 
                                         duration-300 
                                         hover:-translate-y-1
@@ -80,9 +80,7 @@ export default function WhyCenterstate() {
                 </div>
                 <div className="max-w-[760px] mx-auto text-center pt-10 pb-14">
                     <p className="text-[15px] text-gray-700 leading-[1.75]">
-                        From residential service calls to healthcare facilities, schools, laboratories
-                        and ground-up construction projects, Centerstate delivers the same level of
-                        professionalism and craftsmanship on every job.
+                    Centerstate approaches every project with a focus on quality workmanship, clear communication, and an organized jobsite. From renovations and new construction to service and commercial projects, we work closely with homeowners, builders, and contractors to coordinate the plumbing scope from rough-in through final fixture installation.
                     </p>
                 </div>
             </div>

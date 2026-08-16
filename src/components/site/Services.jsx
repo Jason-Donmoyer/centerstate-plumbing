@@ -19,8 +19,8 @@ export default function Services({ servicesData }) {
                         Plumbing &amp; Heating Services
                     </h2>
                     <p className="text-muted text-[15px] leading-relaxed">
-                        From custom renovations to large-scale commercial projects, Centerstate 
-                        brings 25+ years of licensed expertise into every job.
+                    From custom renovations to large-scale commercial projects, 
+                    Centerstate brings more than 25 years of plumbing and construction experience to every job.
                     </p>
                 </div>
 
