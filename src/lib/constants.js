@@ -3,6 +3,8 @@ export const BUSINESS = {
     phone: "17323339508",
     phone_display: "(732) 333-9508",
     address: "Union Beach, NJ",
+    googleReviewUrl: 'https://g.page/r/CVd_P1J_-s9eEBM/review',
+    googlePlaceId: 'CVd_P1J_-s9eEBM', // needed for Places API (Option B)
     service_area: "Monmouth County, NJ",
     service_area_monmouth_county: [
         "Keyport",

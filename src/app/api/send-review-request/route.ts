@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
+import { BUSINESS } from '@/lib/constants'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -13,7 +14,8 @@ export async function POST(request: Request) {
         subject: 'Thanks for choosing Centerstate — quick favor to ask',
         html: `
                 <h2>Hi, ${name}, please take a few minutes to let me know how we did.</h2>
-                <p>You can access the form here <a href="https://centerstateplumbingnj.com/review?name=${name}&role=${role}&requestId=${requestId}">Review Form</a>.</p>
+                <p>You can leave a review here: <a href="${BUSINESS.googleReviewUrl}">Leave a Google Review</a>.</p>
+                <p>It only takes a minute and helps us a lot!</p>
         `
     })
 
