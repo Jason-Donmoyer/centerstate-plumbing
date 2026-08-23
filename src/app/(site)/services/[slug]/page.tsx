@@ -1,59 +1,81 @@
+import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { notFound } from 'next/navigation'
+import WhyCenterstate from '@/components/site/WhyCenterstate'
+import CTAStrip from '@/components/site/CTAStrip'
 import Link from 'next/link'
-import { BUSINESS } from '@/lib/constants'
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const supabase = await createServerSupabaseClient()
+
+    const { data: service } = await supabase
+        .from('services')
+        .select('name, description')
+        .eq('slug', slug)
+        .single()
+
+    if (!service) return {}
+
+    return {
+        title: `${service.name} | Centerstate Plumbing & Heating`,
+        description: service.description,
+    }
+}
+
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const supabase = await createServerSupabaseClient()
+
+    const { data: service, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('slug', slug)
+        .eq('visible', true)
+        .single()
+
+    if (error || !service) notFound()
+
     return (
-        <main className="min-h-screen bg-background flex items-center justify-center px-6">
-            <div className="max-w-lg text-center py-24">
-                <p className="font-bold text-accent text-xs uppercase tracking-[3px] mb-4">
-                    Coming Soon
-                </p>
-                <h1 className="font-extrabold text-3xl md:text-4xl text-text tracking-tight mb-4">
-                    This Page Is On Its Way
-                </h1>
-                <p className="text-muted text-[15px] leading-relaxed mb-8">
-                    We're building out dedicated pages for each service. In the meantime,
-                    contact us directly and Jason will be happy to answer any questions.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                    <Link href="/#contact"
-                          className="bg-accent
-                                     hover:bg-accent-hover 
-                                     text-white 
-                                     font-bold 
-                                     uppercase
-                                     tracking-[0.5px]
-                                     text-[14px]
-                                     px-6
-                                     py-3
-                                     rounded-lg
-                                     transition-colors"
-                    >
-                        Request Estimate
+        <main className="pt-[70px] md:pt-[90px]">
+
+            {/* Hero */}
+            <section className="bg-primary py-16 md:py-24">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <Link href="/#services"
+                          className="text-white/50 hover:text-white text-[13px] font-medium transition-colors mb-6 inline-block">
+                        ← Back to Services
                     </Link>
-                    <a href={`tel:${BUSINESS.phone}`}
-                       className="border 
-                                border-border
-                                hover:border-primary
-                                text-text
-                                font-bold
-                                uppercase
-                                tracking-[0.5px]
-                                text-[14px]
-                                px-6
-                                py-3
-                                rounded-lg
-                                transition-colors"
-                    >
-                        Call {BUSINESS.phone_display}
-                    </a>
+                    <p className="font-bold text-accent text-xs uppercase tracking-[3px] mb-3">
+                        Our Services
+                    </p>
+                    <h1 className="font-extrabold text-4xl md:text-5xl text-white tracking-tight mb-4">
+                        {service.name}
+                    </h1>
+                    <p className="text-white/65 text-[17px] leading-relaxed max-w-2xl">
+                        {service.description}
+                    </p>
                 </div>
-                <Link href={"/"}
-                      className="inline-block mt-8 text-[13px] text-muted hover:text-text transition-colors"
-                >
-                    ← Back to Home
-                </Link>
-            </div>
+            </section>
+
+            {/* Long description */}
+            {service.long_description && (
+                <section className="bg-background py-16 md:py-24">
+                    <div className="max-w-3xl mx-auto px-6 lg:px-8">
+                        {service.long_description.split('\n\n').map((paragraph: string, i: number) => (
+                            <p key={i} className="text-[16px] text-gray-700 leading-[1.8] mb-5">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Why Centerstate */}
+            <WhyCenterstate />
+
+            {/* CTA */}
+            <CTAStrip />
+
         </main>
     )
 }

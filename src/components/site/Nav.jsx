@@ -2,9 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { BUSINESS } from '../../lib/constants'
 
-const LINKS = ['Services', 'Projects', 'About', 'Contact']
+const LINKS = [
+     { label: 'Services', href: '/#services' },
+     { label: 'Projects', href: '/#projects' }, 
+     { label: 'About', href: '/#about' }, 
+     { label: 'Contact', href: '/#contact' },
+    ]
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -22,11 +28,11 @@ export default function Nav() {
                 {/* Desktop links */}
                 <ul className="hidden md:flex gap-6 list-none">
                     {LINKS.map(l => (
-                        <li key={l}>
-                            <a href={`#${l.toLowerCase()}`}
+                        <li key={l.label}>
+                            <Link href={l.href}
                                className="text-white/58 hover:text-white text-[13px] font-medium transition-colors">
-                                {l}
-                            </a>
+                                {l.label}
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -67,18 +73,18 @@ export default function Nav() {
                     </div>
                     <ul className="flex flex-col gap-6 list-none mb-10">
                         {LINKS.map(l => (
-                            <li key={l}>
-                                <a href={`#${l.toLowerCase()}`}
+                            <li key={l.label}>
+                                <Link href={l.href}
                                    onClick={() => setMenuOpen(false)}
                                    className="text-white text-lg font-medium">
-                                    {l}
-                                </a>
+                                    {l.label}
+                                </Link>
                             </li>
                         ))}
                     </ul>
                     <a href={`tel:${BUSINESS.phone}`}
                        className="block text-center bg-[#b45309] hover:bg-[#963f03] text-white font-bold uppercase tracking-[0.6px] text-sm px-4 py-3 rounded transition-colors">
-                        Call {BUSINESS.phoneFormatted}
+                        Call {BUSINESS.phone_display}
                     </a>
                 </div>
             </div>

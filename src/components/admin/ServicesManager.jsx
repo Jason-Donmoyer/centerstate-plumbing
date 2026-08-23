@@ -14,6 +14,7 @@ const schema = z.object({
     name: z.string().min(1, "Name is required"),
     slug: z.string().min(1, "Slug is required"),
     description: z.string().min(1, "Description is required"),
+    long_description: z.string().optional(),
     icon: z.string().min(1, "Icon name is required"),
     order_index: z.coerce.number().default(0),
     visible: z.boolean().default(true),
@@ -62,6 +63,7 @@ export default function ServicesManager({ data }) {
         setValue('icon', service.icon ?? '')
         setValue('order_index', service.order_index ?? 0)
         setValue('visible', service.visible ?? true)
+        setValue('long_description', service.long_description ?? '')
         setEditingId(service.id)
         setShowForm(true)
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -182,6 +184,17 @@ export default function ServicesManager({ data }) {
                                           placeholder="Brief service description..."
                                           className={`${inputClass} resize-none`} />
                                 {errors.description && <p className="text-red-500 text-xs">{errors.description.message}</p>}
+                            </div>
+
+                            <div className="flex flex-col gap-1.5 md:col-span-2">
+                                <label className="text-[13px] font-semibold text-text">
+                                    Full Page Description
+                                    <span className="text-muted font-normal ml-2">(shown on service detail page)</span>
+                                </label>
+                                <textarea {...register('long_description')} rows={8} 
+                                          placeholder="Full service description for the dedicated service page..."
+                                          className={`${inputClass} resize-y`}/>
+                                {errors.long_description && <p className="text-red-500 text-xs">{errors.long_description.message}</p>}
                             </div>
 
                             <div className="flex flex-col gap-1.5">
