@@ -16,7 +16,7 @@ export default function CTAStrip() {
                     Renovations · New Construction · Commercial Plumbing
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <Link href="#contact"
+                    <Link href="/#contact"
                           className="bg-accent hover:bg-accent-hover text-white font-bold uppercase tracking-[0.6px] text-[14px] px-8 py-4 rounded-lg transition-colors">
                         Request Free Estimate
                     </Link>
