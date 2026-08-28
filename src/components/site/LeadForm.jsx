@@ -51,7 +51,7 @@ export default function LeadForm() {
         // Record successful lead in Google Ads
         if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
             window.gtag('event', 'conversion', {
-                send_to: 'AW-627921492/6t1CLe2sekcENSktasC',
+                send_to: 'AW-18415299924/nctGCMTyv-kCENTajM1E',
                 value: 1.0,
                 currency: 'USD',
             })
