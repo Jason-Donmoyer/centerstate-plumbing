@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import "./globals.css";
 import FloatingEmergencyButton from '../components/site/FloatingEmergencyButton'
 import { Toaster } from 'sonner'
+import Script from 'next/script'
 
 
 const inter = Inter({
@@ -109,6 +110,21 @@ export default function RootLayout({
         {children}
         <FloatingEmergencyButton></FloatingEmergencyButton>
         <Toaster position="top-right" />
+
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-627921492"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-627921492');
+          `}
+        </Script>
       </body>
     </html>
   );

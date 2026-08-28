@@ -48,8 +48,17 @@ export default function LeadForm() {
             return
         }
 
+        // Record successful lead in Google Ads
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+                send_to: 'AW-627921492/6t1CLe2sekcENSktasC',
+                value: 1.0,
+                currency: 'USD',
+            })
+        }
+
         // Send email notification
-        await fetch('api/send-lead-email', {
+        await fetch('/api/send-lead-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
